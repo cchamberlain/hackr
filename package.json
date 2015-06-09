@@ -1,0 +1,27 @@
+{
+  "name": "hackr",
+  "version": "0.1.0",
+  "description": "Future nodejs game",
+  "main": "index.js",
+  "preferGlobal": true,
+  "directories": {
+    "man": "man",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cchamberlain/hackr.git"
+  },
+  "keywords": [
+    "hacker",
+    "hackr",
+    "nodejs",
+    "game"
+  ],
+  "author": "Cole Chamberlain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cchamberlain/hackr/issues"
+  },
+  "homepage": "https://github.com/cchamberlain/hackr#readme"
+}
