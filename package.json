@@ -13,15 +13,18 @@
     "url": "git+https://github.com/cchamberlain/hackr.git"
   },
   "keywords": [
+    "game",
     "hacker",
     "hackr",
-    "nodejs",
-    "game"
+    "nodejs"
   ],
   "author": "Cole Chamberlain",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cchamberlain/hackr/issues"
   },
-  "homepage": "https://github.com/cchamberlain/hackr#readme"
+  "homepage": "https://github.com/cchamberlain/hackr#readme",
+  "dependencies": {
+    "express": "^4.13.1"
+  }
 }
