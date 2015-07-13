@@ -26,5 +26,5 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-srv/js/*
-srv/css/*
+srv/js/hackr.js
+srv/css/hackr.css
