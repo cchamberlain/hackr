@@ -1,0 +1,22 @@
+<div id="topbar" ng-controller="IdentityController as identity" class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- hamburger button -->
+      <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+      </a>
+    </div>
+
+    <!-- collapsible navbar -->
+    <div class="navbar-collapse" collapse="isCollapsed">
+      <!-- navbar left / top -->
+
+      <hackr-login-panel hackr-identity="identity" hackr-layout="compact" class="nav navbar-nav navbar-right m-top-10 m-right-0"></hackr-login-panel>
+    </div>
+  </div>
+
+</div>

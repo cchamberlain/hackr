@@ -3,7 +3,6 @@
   "version": "0.1.1",
   "description": "Future nodejs game",
   "main": "index.js",
-  "preferGlobal": true,
   "directories": {
     "man": "man",
     "test": "test"
@@ -25,6 +24,24 @@
   },
   "homepage": "https://github.com/cchamberlain/hackr#readme",
   "dependencies": {
-    "express": "^4.13.1"
+    "angular": "^1.4.2",
+    "angular-animate": "^1.4.2",
+    "angular-bootstrap-npm": "^0.13.0",
+    "angular-route": "^1.4.2",
+    "cookie-cutter": "^0.1.1",
+    "express": "^4.13.1",
+    "jwt-simple": "^0.3.0",
+    "q": "^1.4.1",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.6",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6",
+    "less": "^2.5.1",
+    "nodemon": "^1.3.7",
+    "sane": "^1.1.3",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.3"
   }
 }

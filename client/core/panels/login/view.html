@@ -1,0 +1,110 @@
+<!-- Standard Version -->
+<div ng-if="hackrLayout === 'standard'">
+  <!-- Anonymous -->
+  <div class="well p-top-1" ng-if="!hackrIdentity.context">
+    <div class="row">
+      <div class="col-md-12 p-right-10">
+        <h2 class="pull-left">Log in</h2>
+        <span class="pull-right m-top-10">
+          <i class="fa fa-unlock fa-lg fa-base" ng-hide="hackrIdentity.processCount"></i>
+          <i class="fa fa-cog fa-spin fa-lg fa-base" ng-show="hackrIdentity.processCount"></i>
+        </span>
+      </div>
+    </div>
+
+    <form novalidate class="hackr-form">
+      <div class="form-group">
+        <label class="control-label" for="Username">Username</label>
+        <input ng-model="hackrUsername" class="form-control" id="Username" name="Username" type="text"
+               placeholder="jsmith" value="">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="Password">Password</label>
+        <input ng-model="hackrPassword" class="form-control" id="Password" name="Password" type="password"
+               placeholder="Password123">
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="row" ng-show="hackrIdentity.errors">
+            <div class="col-md-12">
+              <div class="alert alert-sm alert-danger" role="alert" ng-repeat="error in hackrIdentity.errors">
+                {{error}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 pull-right">
+          <button ng-click="hackrIdentity.authorize(hackrUsername, hackrPassword)" type="submit"
+                  class="btn btn-default btn-stretch">Log In
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Authenticated -->
+  <div class="well p-top-1" ng-if="hackrIdentity.context">
+    <div class="row">
+      <div class="col-md-12 p-right-10">
+        <h2 class="pull-left">Authorized</h2>
+        <span class="pull-right m-top-10">
+          <i class="fa fa-lock fa-lg fa-base"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="row m-top-5">
+      <div class="col-md-12">
+        You are signed in as {{hackrIdentity.context.userName}}.
+      </div>
+    </div>
+    <div class="row m-top-10">
+      <div class="col-md-12">
+        <button ng-click="hackrIdentity.signout()" type="button" class="btn btn-danger col-md-4">Log Out</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Compact Version -->
+<div ng-if="hackrLayout === 'compact'">
+  <!-- Anonymous -->
+  <div ng-if="!hackrIdentity.context">
+    <form novalidate class="hackr-form form-inline">
+      <div class="form-group">
+        <i class="fa fa-unlock fa-lg fa-base" ng-hide="hackrIdentity.processCount"></i>
+        <i class="fa fa-cog fa-spin fa-lg fa-base" ng-show="hackrIdentity.processCount"></i>
+      </div>
+
+      <div class="form-group">
+        <input ng-model="hackrUsername" class="form-control input-sm" name="Username" type="text"
+               placeholder="username" value="">
+      </div>
+      <div class="form-group">
+        <input ng-model="hackrPassword" class="form-control input-sm" name="Password" type="password"
+               placeholder="password">
+      </div>
+      <div class="form-group">
+        <button ng-click="hackrIdentity.authorize(hackrUsername, hackrPassword)" type="submit"
+                class="btn btn-default btn-sm pull-right">Log In
+        </button>
+      </div>
+
+
+    </form>
+  </div>
+
+  <!-- Authenticated -->
+  <div ng-if="hackrIdentity.context">
+    <div class="pull-left m-top-5">
+      <i class="fa fa-lock fa-lg fa-base"></i>
+      <span class="p-left-20 p-right-20">
+      <b>{{hackrIdentity.context.userName}}</b>
+      </span>
+    </div>
+    <div class="pull-right">
+      <button ng-click="hackrIdentity.signout()" type="button" class="btn btn-sm btn-danger">Log Out</button>
+    </div>
+  </div>
+</div>

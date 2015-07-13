@@ -1,0 +1,61 @@
+<div class="hackr-panel" ng-if="hackrIdentity.isDebug">
+  <div class="row">
+    <div class="col-md-12 p-right-10">
+      <h3 class="pull-left">Debug Panel</h3>
+        <span class="pull-right m-top-10">
+          <i class="fa fa-wrench fa-lg fa-secondary-1"></i>
+        </span>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="bs-callout">
+    <h4>Information</h4>
+    <table class="table font-xs">
+      <tbody>
+      <tr ng-class="{success: ticksUntilExp >= 0, danger: ticksUntilExp < 0}">
+        <td>Access Token Expires</td>
+        <td>{{ticksUntilExp | hackrTimespan }}
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bs-callout bs-callout-info">
+    <h4>Actions</h4>
+
+    <div class="btn-group">
+      <button ng-show="hackrIdentity.context.tokens.refreshToken" ng-click="hackrIdentity.refresh()" type="button" class="btn btn-default">
+        Refresh Token
+      </button>
+      <button ng-hide="hackrIdentity.context.tokens.accessToken" ng-click="autoLoginAdmin()" type="button" class="btn btn-default">
+        Auto-Login Admin
+      </button>
+      <button ng-hide="hackrIdentity.context.tokens.accessToken" ng-click="autoLoginUser()" type="button" class="btn btn-default">
+        Auto-Login User
+      </button>
+    </div>
+  </div>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Settings</h4>
+
+    <div class="form-group">
+      <label class="checkbox-inline">
+        <input type="checkbox" name="hackrForcePostbacks" ng-model="hackrForcePostbacks"> Force Postbacks
+      </label>
+    </div>
+  </div>
+
+  <div ng-if="hackrIdentity.context" class="bs-callout bs-callout-danger">
+    <h4>Tokens</h4>
+    <h5>Access Token (JWT)</h5>
+    <pre class="font-xs">{{hackrIdentity.context.tokens.accessToken}}</pre>
+
+    <h5>Refresh Token</h5>
+    <pre class="font-xs">{{hackrIdentity.context.tokens.refreshToken}}</pre>
+
+    <h5>Access Token Payload</h5>
+    <pre class="font-xs">{{hackrIdentity.context.decodedToken | json }}</pre>
+  </div>
+</div>

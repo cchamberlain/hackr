@@ -1,0 +1,44 @@
+<div class="jumbotron">
+    <h1>hackr</h1>
+    <h2 ng-if="user.name">Hi, <b>{{user.name}}</b></h2>
+    <h3 ng-if="user.deal">I understand we are dealing with your {{user.deal}}.</h3>
+    <p class="lead">This is the sandbox for hackr single page application.</p>
+
+    <p>{{text}}</p>
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="firstName" class="col-sm-4 control-label">What's your name?</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="user.name" placeholder="Your name here" id="firstName" />
+            </div>
+        </div>
+        <div class="form-group" ng-if="user.name">
+            <label for="userDeal" class="col-sm-4 control-label">What's your deal?</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="user.deal" placeholder="Your deal here" id="userDeal" />
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div class="row" ng-if="user.name && user.deal">
+    <div class="col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">Your information</div>
+            <div class="panel-body">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <span class="badge">{{user.name.length}}</span>
+                        Your name is {{user.name}}
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <span class="badge">{{user.deal.length}}</span>
+                        Your deal is {{user.deal}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
