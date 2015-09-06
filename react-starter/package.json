@@ -1,12 +1,8 @@
 {
-  "name": "hackr",
-  "version": "0.1.4",
-  "description": "Future nodejs game",
+  "name": "react-starter",
+  "version": "0.0.0",
+  "description": "",
   "main": "app/app.js",
-  "directories": {
-    "man": "man",
-    "test": "test"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-server": "webpack-dev-server --config webpack-dev-server.config.js --progress --colors --port 2992 --inline",
@@ -15,22 +11,15 @@
     "start-dev": "node lib/server-development",
     "start": "node lib/server-production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cchamberlain/hackr.git"
-  },
   "keywords": [
-    "game",
-    "hacker",
-    "hackr",
-    "nodejs"
+    "webpack",
+    "react",
+    "starter",
+    "boilerplate",
+    "hot"
   ],
-  "author": "Cole Chamberlain",
+  "author": "Tobias Koppers @sokra",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cchamberlain/hackr/issues"
-  },
-  "homepage": "https://github.com/cchamberlain/hackr#readme",
   "dependencies": {
     "async": "^1.2.0",
     "babel-core": "^5.0.12",
