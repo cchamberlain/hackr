@@ -1,8 +1,8 @@
-var path = require("path");
-var webpack = require("webpack");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var StatsPlugin = require("stats-webpack-plugin");
-var loadersByExtension = require("./config/loadersByExtension");
+var path = require("path")
+  , webpack = require("webpack")
+  , ExtractTextPlugin = require("extract-text-webpack-plugin")
+  , StatsPlugin = require("stats-webpack-plugin")
+  , loadersByExtension = require("./config/loadersByExtension")
 
 module.exports = function(options) {
 	var entry = {
