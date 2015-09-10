@@ -17,6 +17,7 @@ _ubuntu_12 = <<SCRIPT
   export DEBIAN_FRONTEND=noninteractive
   add-apt-repository ppa:directhex/monoxide
   apt-get -y update
+  apt-get -y upgrade
   apt-get -y install libmono-cil-dev mono-4.0-service mono-devel mono-complete
 SCRIPT
 
