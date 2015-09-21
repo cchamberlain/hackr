@@ -1,7 +1,8 @@
 import React from "react";
 import ChatLineView from "components/ChatLineView";
 import { fetchChatMessages } from "store-helpers/Chat";
-import styles from "./ChatList.css";
+//import styles from "./ChatList.css";
+import styles from "./Application.less";
 
 export default class ChatList extends React.Component {
 	static getProps(stores, params) {
