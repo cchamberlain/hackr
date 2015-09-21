@@ -11,7 +11,7 @@ export default class ChatList extends React.Component {
 		};
 	}
 	render() {
-		var { messages } = this.props;
+		var { messages } = this.props
 		return <div className={styles.this} ref="chatList">
 			{messages ?
 				messages.map((msg, idx) => <ChatLineView key={idx} {...msg} />) :

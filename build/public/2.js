@@ -1,1 +1,127 @@
-webpackJsonp([2],{216:function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(193),i=n(217),a=r(i);t["default"]=o.createContainer(a["default"]),e.exports=t["default"]},217:function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),u=function(e,t,n){for(var r=!0;r;){var o=e,i=t,a=n;u=l=s=void 0,r=!1,null===o&&(o=Function.prototype);var u=Object.getOwnPropertyDescriptor(o,i);if(void 0!==u){if("value"in u)return u.value;var s=u.get;return void 0===s?void 0:s.call(a)}var l=Object.getPrototypeOf(o);if(null===l)return void 0;e=l,t=i,n=a,r=!0}},s=n(2),l=r(s),c=n(218),p=r(c),f=function(e){function t(){o(this,t),u(Object.getPrototypeOf(t.prototype),"constructor",this).apply(this,arguments)}return i(t,e),a(t,[{key:"render",value:function(){var e={__html:n(220)};return l["default"].createElement("div",{className:p["default"]["this"],dangerouslySetInnerHTML:e})}}],[{key:"getProps",value:function(){return{}}}]),t}(l["default"].Component);t["default"]=f,e.exports=t["default"]},218:function(e,t,n){var r=n(219);"string"==typeof r&&(r=[[e.id,r,""]]);n(210)(r,{});r.locals&&(e.exports=r.locals)},219:function(e,t,n){t=e.exports=n(209)(),t.locals={"this":"_3KDqByl73uCIiLK21pHPRx"},t.push([e.id,"._3KDqByl73uCIiLK21pHPRx{background-color:#fff;border:1px dotted gray;padding:1em}",""])},220:function(e,t){e.exports="<h1 id=hackr>hackr</h1><p>Future game.</p>"}});
+webpackJsonp([2],{
+
+/***/ 220:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _itemsStore = __webpack_require__(198);
+
+	var _containersReadmePage = __webpack_require__(221);
+
+	var _containersReadmePage2 = _interopRequireDefault(_containersReadmePage);
+
+	exports["default"] = (0, _itemsStore.createContainer)(_containersReadmePage2["default"]);
+	module.exports = exports["default"];
+
+/***/ },
+
+/***/ 221:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ReadmePageCss = __webpack_require__(222);
+
+	var _ReadmePageCss2 = _interopRequireDefault(_ReadmePageCss);
+
+	var ReadmePage = (function (_React$Component) {
+		_inherits(ReadmePage, _React$Component);
+
+		function ReadmePage() {
+			_classCallCheck(this, ReadmePage);
+
+			_get(Object.getPrototypeOf(ReadmePage.prototype), "constructor", this).apply(this, arguments);
+		}
+
+		_createClass(ReadmePage, [{
+			key: "render",
+			value: function render() {
+				var readme = { __html: __webpack_require__(224) };
+				return _react2["default"].createElement("div", { className: _ReadmePageCss2["default"]["this"], dangerouslySetInnerHTML: readme });
+			}
+		}], [{
+			key: "getProps",
+			value: function getProps() {
+				return {};
+			}
+		}]);
+
+		return ReadmePage;
+	})(_react2["default"].Component);
+
+	exports["default"] = ReadmePage;
+	module.exports = exports["default"];
+
+/***/ },
+
+/***/ 222:
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(223);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(214)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?module&localIdentName=[path][name]---[local]---[hash:base64:5]!./ReadmePage.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?module&localIdentName=[path][name]---[local]---[hash:base64:5]!./ReadmePage.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 223:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(213)();
+	exports.locals = {
+	  "this": "app-containers-ReadmePage---this---3KDqB"
+	};
+	exports.push([module.id, ".app-containers-ReadmePage---this---3KDqB {\n\tbackground-color: white;\n\tborder: 1px dotted gray;\n\tpadding: 1em;\n}\n", ""]);
+
+/***/ },
+
+/***/ 224:
+/***/ function(module, exports) {
+
+	module.exports = "<h1 id=\"hackr\">hackr</h1>\n<p>Future game.</p>\n";
+
+/***/ }
+
+});

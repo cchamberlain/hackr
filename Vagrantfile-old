@@ -1,0 +1,105 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+_provision = <<SCRIPT
+  set -o errexit
+  set -o pipefail
+  set -o nounset
+  shopt -s failglob
+  set -o xtrace
+  
+  export VUSER=vagrant
+  export PREFIX=/usr/local
+  export PATH=$PREFIX/bin:$PATH
+  
+  apt-get -y update
+  
+  # ->INSTALL APPS
+  apt-get -y install build-essential vim git curl zsh autoconf libtool automake unzip gettext
+  # linux-headers-$(uname -r) mono-complete 
+  
+
+
+  
+  # ->LOGIN (BASH) CONTINUE SETUP
+  exec sudo -i -u vagrant $(which bash) -- << EOF
+
+
+  # ->NODE FROM SCRATCH
+  # . ~/.bashrc
+  # mkdir ~/local
+  # mkdir ~/node-latest-install
+  # cd ~/node-latest-install
+  # curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
+  # sudo ./configure --prefix=~/local
+  # sudo make install # ok, fine, this step probably takes more than 30 seconds...
+  # curl https://www.npmjs.org/install.sh | sh
+  
+  # ->LIBUV (FOR DNX)
+  # curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | sudo tar zxfv - -C /usr/local/src
+  # cd /usr/local/src/libuv-1.4.2
+  # sudo sh autogen.sh
+  # sudo ./configure
+  # sudo make
+  # sudo make install
+  # sudo rm -rf /usr/local/src/libuv-1.4.2 && cd ~/
+  # sudo ldconfig
+  
+  # ->DNVM
+  # [[ -d ~/.dnx ]] || curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
+  
+  # mkdir -p ~/.config/NuGet
+  
+  # ->NUGET
+  # [[ -f ~/.config/NuGet/NuGet.config ]] && curl -sL https://gist.githubusercontent.com/cchamberlain/0711a59e5c9220a0325e/raw/6192ae73c802e69817784df39e2a4e1a9fd90db5/NuGet.config  >~/.config/NuGet/NuGet.config
+  
+  # ->ZSHENV
+  curl -sL https://gist.githubusercontent.com/cchamberlain/ad8ae7ce3ef2a965295d/raw/cc68d65e7a058d7812c8fa7d7869e5378be804fc/.zshenv >~/.zshenv
+  
+  # ->ZDOTDIR
+  [[ -d ~/.zsh ]] || git clone -b darwin --recursive https://github.com/cchamberlain/zdotdir ~/.zsh
+   
+  # ->LOGIN ZSH
+  sudo chsh -s $(which zsh) $(whoami)
+  # exec sudo -i -u vagrant $(which zsh) -- << EOF
+  zsh
+  update-system
+  
+  cd /vagrant
+  npm install
+  
+EOF
+SCRIPT
+
+_fix_vmware_tools_script = <<SCRIPT
+  sed -i.bak 's/answer AUTO_KMODS_ENABLED_ANSWER no/answer AUTO_KMODS_ENABLED_ANSWER yes/g' /etc/vmware-tools/locations
+  sed -i 's/answer AUTO_KMODS_ENABLED no/answer AUTO_KMODS_ENABLED yes/g' /etc/vmware-tools/locations
+EOF
+SCRIPT
+
+VAGRANTFILE_API_VERSION = "2"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # config.vm.provider "virtualbox" do |v|
+    # config.vm.box = "ubuntu/trusty64"
+    # # v.gui = true
+    # v.memory = 1536
+    # v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+    
+    # config.vm.provision "shell", inline: _ubuntu_14
+    # config.vm.provision "shell", inline: _provision
+    # config.vm.network "forwarded_port", guest: 8080, host: 8080 
+    # config.vm.network "forwarded_port", guest: 2992, host: 2992
+  # end
+
+  config.vm.provider "vmware_workstation" do |v|
+    config.vm.box = "hashicorp/precise64"
+    # v.gui = true
+    v.vmx["memsize"] = "4096"
+    v.vmx["numvcpus"] = "2"
+  end
+  
+  config.vm.provision "shell", inline: _provision
+  config.vm.provision "shell", inline: _fix_vmware_tools_script
+  config.vm.network "forwarded_port", guest: 8080, host: 8080 
+  config.vm.network "forwarded_port", guest: 2992, host: 2992
+end

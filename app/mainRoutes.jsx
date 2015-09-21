@@ -18,6 +18,7 @@ import ChatPage     from "route-handlers/ChatPage";
 if(!Object.assign)
 	Object.assign = React.__spread; // eslint-disable-line no-underscore-dangle
 
+
 // export routes
 module.exports = (
 	<Route name="app" path="/" handler={Application}>

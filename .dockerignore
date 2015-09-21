@@ -1,0 +1,7 @@
+.git
+.vagrant
+node_modules
+lib-old
+react-starter
+NOTES
+ts
