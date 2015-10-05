@@ -1,8 +1,8 @@
 var path = require("path")
-  , webpack = require("webpack")
-  , ExtractTextPlugin = require("extract-text-webpack-plugin")
-  , StatsPlugin = require("stats-webpack-plugin")
-  , loadersByExtension = require("./config/loadersByExtension")
+	, webpack = require("webpack")
+	, ExtractTextPlugin = require("extract-text-webpack-plugin")
+	, StatsPlugin = require("stats-webpack-plugin")
+	, loadersByExtension = require("./config/loadersByExtension")
 
 module.exports = function(options) {
 	var entry = {
@@ -158,7 +158,7 @@ module.exports = function(options) {
 		plugins: plugins,
 		devServer: {
 			stats: {
-				cached: false,
+				cached: true,
 				exclude: excludeFromStats
 			}
 		}

@@ -23,14 +23,6 @@ export default class Application extends React.Component {
                 </Col>
             </Row>
 		</Grid>
-        /*
-		return <div className={styles.this + (loading ? " " + styles.loading : "")}>
-			<div className={styles.loadingElement}>loading...</div>
-			<h1>hackr</h1>
-			<MainMenu />
-			<RouteHandler />
-		</div>
-        */
 	}
 }
 
